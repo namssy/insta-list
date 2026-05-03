@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1월용궁신년회</title>
+    <title>여름맞이 체육대회</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
@@ -13,39 +14,39 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 40px 20px;
         }
-        
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
         }
-        
+
         header {
             text-align: center;
             margin-bottom: 30px;
             color: white;
         }
-        
+
         header h1 {
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 8px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
-        
+
         header p {
             font-size: 0.9rem;
             opacity: 0.9;
         }
-        
+
         .lists-wrapper {
-            display: flex; 
+            display: flex;
             gap: 30px;
         }
 
@@ -61,50 +62,50 @@
             margin: 30px 0 15px;
             padding-left: 10px;
             border-left: 4px solid #fff;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
-        
+
         .stats {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-top: 15px;
         }
-        
+
         .stat-item {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             padding: 10px 20px;
             border-radius: 20px;
             font-size: 0.85rem;
             backdrop-filter: blur(10px);
         }
-        
+
         .user-list {
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
-        
+
         .user-card {
             display: flex;
             align-items: center;
             background: white;
             padding: 16px;
             border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        
+
         .user-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
-        
+
         .user-card.failed {
             background: #f8f8f8;
             opacity: 0.8;
         }
-        
+
         .user-card img {
             width: 56px;
             height: 56px;
@@ -113,13 +114,13 @@
             border: 2px solid #eee;
             flex-shrink: 0;
         }
-        
+
         .info {
             flex-grow: 1;
             margin-left: 14px;
             min-width: 0;
         }
-        
+
         .username {
             font-weight: 600;
             font-size: 1rem;
@@ -128,24 +129,24 @@
             align-items: center;
             gap: 6px;
         }
-        
+
         .private-tag {
             font-size: 0.7rem;
             color: #ff6b6b;
             font-weight: 600;
         }
-        
+
         .public-tag {
             font-size: 0.7rem;
             color: #51cf66;
             font-weight: 600;
         }
-        
+
         .failed-tag {
             font-size: 0.7rem;
             color: #aaa;
         }
-        
+
         .fullname {
             font-size: 0.85rem;
             color: #8e8e8e;
@@ -154,7 +155,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        
+
         .btn {
             text-decoration: none;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -166,26 +167,26 @@
             flex-shrink: 0;
             transition: opacity 0.2s ease, transform 0.2s ease;
         }
-        
+
         .btn:hover {
             opacity: 0.9;
             transform: scale(1.02);
         }
-        
+
         .btn.disabled {
             background: #ccc;
         }
-        
+
         footer {
             text-align: center;
             margin-top: 30px;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.8rem;
         }
-        
+
         @media (max-width: 768px) {
             .lists-wrapper {
-                flex-direction: column; 
+                flex-direction: column;
             }
         }
 
@@ -193,12 +194,12 @@
             .user-card {
                 padding: 12px;
             }
-            
+
             .user-card img {
                 width: 48px;
                 height: 48px;
             }
-            
+
             .btn {
                 padding: 8px 14px;
                 font-size: 0.8rem;
@@ -206,282 +207,448 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
-            <h1>🧜‍♀️1월용궁신년회🧜‍♂️</h1>
-            <p>마지막 업데이트: 2025-12-23 09:18</p>
+            <h1>여름맞이 체육대회</h1>
+            <p>마지막 업데이트: 2026-05-03 17:24</p>
             <div class="stats">
-                <div class="stat-item">전체 29명</div>                
+                <div class="stat-item">전체 44명</div>
             </div>
         </header>
         <div class="lists-wrapper">
             <div class="list-section">
                 <!-- 일반 참여자 섹션 -->
-                <h2 class="section-title">👥 참여자 목록 (29)</h2>
+                <h2 class="section-title">👥 참여자 목록 (44)</h2>
                 <div class="user-list">
-                    
-                <div class="user-card">
-                    <img src="assets/bookae_2021.jpg" onerror="this.src='assets/default.svg'" alt="bookae_2021">
-                    <div class="info">
-                        <div class="username">bookae_2021 <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">Audrey Ahn</div>
+
+                    <div class="user-card">
+                        <img src="assets/yeoriyeori.jpg" onerror="this.src='assets/default.svg'" alt="yeoriyeori">
+                        <div class="info">
+                            <div class="username">yeoriyeori <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">남성열</div>
+                        </div>
+                        <a href="https://www.instagram.com/yeoriyeori/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/bookae_2021/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/yeoriyeori.jpg" onerror="this.src='assets/default.svg'" alt="yeoriyeori">
-                    <div class="info">
-                        <div class="username">yeoriyeori <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">남성열</div>
+
+                    <div class="user-card">
+                        <img src="assets/tsy_0.jpg" onerror="this.src='assets/default.svg'" alt="tsy_0">
+                        <div class="info">
+                            <div class="username">tsy_0 <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">양서영</div>
+                        </div>
+                        <a href="https://www.instagram.com/tsy_0/" target="_blank" rel="noopener" class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/yeoriyeori/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/funkihun.jpg" onerror="this.src='assets/default.svg'" alt="funkihun">
-                    <div class="info">
-                        <div class="username">funkihun <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">김기훈 | 프리다이빙 & 스쿠버다이빙 강사 |</div>
+
+                    <div class="user-card">
+                        <img src="assets/travelerj87.jpg" onerror="this.src='assets/default.svg'" alt="travelerj87">
+                        <div class="info">
+                            <div class="username">travelerj87 <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">Sunghoon Ji / 프리다이버</div>
+                        </div>
+                        <a href="https://www.instagram.com/travelerj87/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/funkihun/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/sunnyo_oa.jpg" onerror="this.src='assets/default.svg'" alt="sunnyo_oa">
-                    <div class="info">
-                        <div class="username">sunnyo_oa <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">매앵</div>
+
+                    <div class="user-card">
+                        <img src="assets/kang_iseul_.jpg" onerror="this.src='assets/default.svg'" alt="kang_iseul_">
+                        <div class="info">
+                            <div class="username">kang_iseul_ <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">프리다이빙 강사 🐬/ 강이슬</div>
+                        </div>
+                        <a href="https://www.instagram.com/kang_iseul_/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/sunnyo_oa/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/23.baoh.jpg" onerror="this.src='assets/default.svg'" alt="23.baoh">
-                    <div class="info">
-                        <div class="username">23.baoh <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">바오</div>
+
+                    <div class="user-card">
+                        <img src="assets/zzv___zzv.jpg" onerror="this.src='assets/default.svg'" alt="zzv___zzv">
+                        <div class="info">
+                            <div class="username">zzv___zzv <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">-</div>
+                        </div>
+                        <a href="https://www.instagram.com/zzv___zzv/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/23.baoh/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/bly_dani_02.jpg" onerror="this.src='assets/default.svg'" alt="bly_dani_02">
-                    <div class="info">
-                        <div class="username">bly_dani_02 <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">🪼DANI🧜‍♀️mermaid instructor🦭 민다은🪼</div>
+
+                    <div class="user-card">
+                        <img src="assets/jieun.lee0000.jpg" onerror="this.src='assets/default.svg'" alt="jieun.lee0000">
+                        <div class="info">
+                            <div class="username">jieun.lee0000 <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">-</div>
+                        </div>
+                        <a href="https://www.instagram.com/jieun.lee0000/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/bly_dani_02/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/bono_dive.jpg" onerror="this.src='assets/default.svg'" alt="bono_dive">
-                    <div class="info">
-                        <div class="username">bono_dive <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">임내현</div>
+
+                    <div class="user-card">
+                        <img src="assets/hyukjun___kwon.jpg" onerror="this.src='assets/default.svg'"
+                            alt="hyukjun___kwon">
+                        <div class="info">
+                            <div class="username">hyukjun___kwon <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">-</div>
+                        </div>
+                        <a href="https://www.instagram.com/hyukjun___kwon/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/bono_dive/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/diver.ez.jpg" onerror="this.src='assets/default.svg'" alt="diver.ez">
-                    <div class="info">
-                        <div class="username">diver.ez <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">이지훈</div>
+
+                    <div class="user-card">
+                        <img src="assets/hope_inna.jpg" onerror="this.src='assets/default.svg'" alt="hope_inna">
+                        <div class="info">
+                            <div class="username">hope_inna <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">응비</div>
+                        </div>
+                        <a href="https://www.instagram.com/hope_inna/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/diver.ez/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/hyunwithsea.jpg" onerror="this.src='assets/default.svg'" alt="hyunwithsea">
-                    <div class="info">
-                        <div class="username">hyunwithsea <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">Hyunsun/Alicia • Diver and Traveler🐬</div>
+
+                    <div class="user-card">
+                        <img src="assets/jjem_b.jpg" onerror="this.src='assets/default.svg'" alt="jjem_b">
+                        <div class="info">
+                            <div class="username">jjem_b <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">-</div>
+                        </div>
+                        <a href="https://www.instagram.com/jjem_b/" target="_blank" rel="noopener" class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/hyunwithsea/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/som.blue.jpg" onerror="this.src='assets/default.svg'" alt="som.blue">
-                    <div class="info">
-                        <div class="username">som.blue <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">-</div>
+
+                    <div class="user-card">
+                        <img src="assets/ahang486.jpg" onerror="this.src='assets/default.svg'" alt="ahang486">
+                        <div class="info">
+                            <div class="username">ahang486 <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">박성열</div>
+                        </div>
+                        <a href="https://www.instagram.com/ahang486/" target="_blank" rel="noopener" class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/som.blue/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/hmmh.x_x.jpg" onerror="this.src='assets/default.svg'" alt="hmmh.x_x">
-                    <div class="info">
-                        <div class="username">hmmh.x_x <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">혜미(미미) | Mermaid 강사 | MOANA 팀장 | ᯓᡣ𐭩</div>
+
+                    <div class="user-card">
+                        <img src="assets/hwicook.jpg" onerror="this.src='assets/default.svg'" alt="hwicook">
+                        <div class="info">
+                            <div class="username">hwicook <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">휘쿡 / 다양한 리뷰. 도전. 음식</div>
+                        </div>
+                        <a href="https://www.instagram.com/hwicook/" target="_blank" rel="noopener" class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/hmmh.x_x/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/ceobokjin6.jpg" onerror="this.src='assets/default.svg'" alt="ceobokjin6">
-                    <div class="info">
-                        <div class="username">ceobokjin6 <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">최복진</div>
+
+                    <div class="user-card">
+                        <img src="assets/hedge_l.jpg" onerror="this.src='assets/default.svg'" alt="hedge_l">
+                        <div class="info">
+                            <div class="username">hedge_l <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">-</div>
+                        </div>
+                        <a href="https://www.instagram.com/hedge_l/" target="_blank" rel="noopener" class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/ceobokjin6/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/sk.kim8105.jpg" onerror="this.src='assets/default.svg'" alt="sk.kim8105">
-                    <div class="info">
-                        <div class="username">sk.kim8105 <span class="private-tag">🔒 비공개</span></div>
-                        <div class="fullname">김수경</div>
+
+                    <div class="user-card">
+                        <img src="assets/grandblue__art.jpg" onerror="this.src='assets/default.svg'"
+                            alt="grandblue__art">
+                        <div class="info">
+                            <div class="username">grandblue__art <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">러브 아트 서아영 💜 요가를 나누는</div>
+                        </div>
+                        <a href="https://www.instagram.com/grandblue__art/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/sk.kim8105/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/hhong2_2gnohh.jpg" onerror="this.src='assets/default.svg'" alt="hhong2_2gnohh">
-                    <div class="info">
-                        <div class="username">hhong2_2gnohh <span class="private-tag">🔒 비공개</span></div>
-                        <div class="fullname">홍진선</div>
+
+                    <div class="user-card">
+                        <img src="assets/heti.0214.jpg" onerror="this.src='assets/default.svg'" alt="heti.0214">
+                        <div class="info">
+                            <div class="username">heti.0214 <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">햇이</div>
+                        </div>
+                        <a href="https://www.instagram.com/heti.0214/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/hhong2_2gnohh/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/swim.love.dive.jpg" onerror="this.src='assets/default.svg'" alt="swim.love.dive">
-                    <div class="info">
-                        <div class="username">swim.love.dive <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">물조아♡̴ | 프리다이빙 강사 | 수영복리뷰 | 수영복코디</div>
+
+                    <div class="user-card">
+                        <img src="assets/angela3549.jpg" onerror="this.src='assets/default.svg'" alt="angela3549">
+                        <div class="info">
+                            <div class="username">angela3549 <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">Angie Kim</div>
+                        </div>
+                        <a href="https://www.instagram.com/angela3549/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/swim.love.dive/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/hamjungjin.jpg" onerror="this.src='assets/default.svg'" alt="hamjungjin">
-                    <div class="info">
-                        <div class="username">hamjungjin <span class="private-tag">🔒 비공개</span></div>
-                        <div class="fullname">함정진</div>
+
+                    <div class="user-card">
+                        <img src="assets/leehar1n.jpg" onerror="this.src='assets/default.svg'" alt="leehar1n">
+                        <div class="info">
+                            <div class="username">leehar1n <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">하린</div>
+                        </div>
+                        <a href="https://www.instagram.com/leehar1n/" target="_blank" rel="noopener" class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/hamjungjin/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/stellar.blingme.jpg" onerror="this.src='assets/default.svg'" alt="stellar.blingme">
-                    <div class="info">
-                        <div class="username">stellar.blingme <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">-</div>
+
+                    <div class="user-card">
+                        <img src="assets/yunmiokk.jpg" onerror="this.src='assets/default.svg'" alt="yunmiokk">
+                        <div class="info">
+                            <div class="username">yunmiokk <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">miok</div>
+                        </div>
+                        <a href="https://www.instagram.com/yunmiokk/" target="_blank" rel="noopener" class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/stellar.blingme/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/hyunha_sz.jpg" onerror="this.src='assets/default.svg'" alt="hyunha_sz">
-                    <div class="info">
-                        <div class="username">hyunha_sz <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">효나(Henna) | Mermaid강사🧜‍♀️</div>
+
+                    <div class="user-card">
+                        <img src="assets/i_am_jyung.jpg" onerror="this.src='assets/default.svg'" alt="i_am_jyung">
+                        <div class="info">
+                            <div class="username">i_am_jyung <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">Jiyoung Jung</div>
+                        </div>
+                        <a href="https://www.instagram.com/i_am_jyung/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/hyunha_sz/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/yooohyejin.jpg" onerror="this.src='assets/default.svg'" alt="yooohyejin">
-                    <div class="info">
-                        <div class="username">yooohyejin <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">𝙃𝙔𝙀𝙅𝙄𝙉</div>
+
+                    <div class="user-card">
+                        <img src="assets/naraxxanne.jpg" onerror="this.src='assets/default.svg'" alt="naraxxanne">
+                        <div class="info">
+                            <div class="username">naraxxanne <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">NARA.2</div>
+                        </div>
+                        <a href="https://www.instagram.com/naraxxanne/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/yooohyejin/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/mermaid.merry_.jpg" onerror="this.src='assets/default.svg'" alt="mermaid.merry_">
-                    <div class="info">
-                        <div class="username">mermaid.merry_ <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">-</div>
+
+                    <div class="user-card">
+                        <img src="assets/j.__.sy.jpg" onerror="this.src='assets/default.svg'" alt="j.__.sy">
+                        <div class="info">
+                            <div class="username">j.__.sy <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">-</div>
+                        </div>
+                        <a href="https://www.instagram.com/j.__.sy/" target="_blank" rel="noopener" class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/mermaid.merry_/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/peanut_freediver.jpg" onerror="this.src='assets/default.svg'" alt="peanut_freediver">
-                    <div class="info">
-                        <div class="username">peanut_freediver <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">최지양 I 프리다이빙 강사 🐳</div>
+
+                    <div class="user-card">
+                        <img src="assets/simba___two.jpg" onerror="this.src='assets/default.svg'" alt="simba___two">
+                        <div class="info">
+                            <div class="username">simba___two <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">-</div>
+                        </div>
+                        <a href="https://www.instagram.com/simba___two/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/peanut_freediver/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/pongdang.ping.jpg" onerror="this.src='assets/default.svg'" alt="pongdang.ping">
-                    <div class="info">
-                        <div class="username">pongdang.ping <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">퐁당핑</div>
+
+                    <div class="user-card">
+                        <img src="assets/brp0077.jpg" onerror="this.src='assets/default.svg'" alt="brp0077">
+                        <div class="info">
+                            <div class="username">brp0077 <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">노우진</div>
+                        </div>
+                        <a href="https://www.instagram.com/brp0077/" target="_blank" rel="noopener" class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/pongdang.ping/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/diving.hani.jpg" onerror="this.src='assets/default.svg'" alt="diving.hani">
-                    <div class="info">
-                        <div class="username">diving.hani <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">김하은 | 프리다이빙 강사</div>
+
+                    <div class="user-card">
+                        <img src="assets/jihxe.jpg" onerror="this.src='assets/default.svg'" alt="jihxe">
+                        <div class="info">
+                            <div class="username">jihxe <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">최지혜</div>
+                        </div>
+                        <a href="https://www.instagram.com/jihxe/" target="_blank" rel="noopener" class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/diving.hani/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/s_eal.vibes.jpg" onerror="this.src='assets/default.svg'" alt="s_eal.vibes">
-                    <div class="info">
-                        <div class="username">s_eal.vibes <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">오늘의 물범은 ?</div>
+
+                    <div class="user-card">
+                        <img src="assets/imxoo_days.jpg" onerror="this.src='assets/default.svg'" alt="imxoo_days">
+                        <div class="info">
+                            <div class="username">imxoo_days <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">임수</div>
+                        </div>
+                        <a href="https://www.instagram.com/imxoo_days/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/s_eal.vibes/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/i_jangmi_.jpg" onerror="this.src='assets/default.svg'" alt="i_jangmi_">
-                    <div class="info">
-                        <div class="username">i_jangmi_ <span class="private-tag">🔒 비공개</span></div>
-                        <div class="fullname">이장미</div>
+
+                    <div class="user-card">
+                        <img src="assets/_h.eco.jpg" onerror="this.src='assets/default.svg'" alt="_h.eco">
+                        <div class="info">
+                            <div class="username">_h.eco <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">해코</div>
+                        </div>
+                        <a href="https://www.instagram.com/_h.eco/" target="_blank" rel="noopener" class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/i_jangmi_/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/pinksol0406.jpg" onerror="this.src='assets/default.svg'" alt="pinksol0406">
-                    <div class="info">
-                        <div class="username">pinksol0406 <span class="private-tag">🔒 비공개</span></div>
-                        <div class="fullname">핑크소리</div>
+
+                    <div class="user-card">
+                        <img src="assets/stella._.sophie.jpg" onerror="this.src='assets/default.svg'"
+                            alt="stella._.sophie">
+                        <div class="info">
+                            <div class="username">stella._.sophie <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">sophie</div>
+                        </div>
+                        <a href="https://www.instagram.com/stella._.sophie/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/pinksol0406/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/ys._.se.jpg" onerror="this.src='assets/default.svg'" alt="ys._.se">
-                    <div class="info">
-                        <div class="username">ys._.se <span class="private-tag">🔒 비공개</span></div>
-                        <div class="fullname">yeseul</div>
+
+                    <div class="user-card">
+                        <img src="assets/ehaera__.jpg" onerror="this.src='assets/default.svg'" alt="ehaera__">
+                        <div class="info">
+                            <div class="username">ehaera__ <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">동환</div>
+                        </div>
+                        <a href="https://www.instagram.com/ehaera__/" target="_blank" rel="noopener" class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/ys._.se/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/yeaji323232.jpg" onerror="this.src='assets/default.svg'" alt="yeaji323232">
-                    <div class="info">
-                        <div class="username">yeaji323232 <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">설윤정</div>
+
+                    <div class="user-card">
+                        <img src="assets/juyeon210_s2.jpg" onerror="this.src='assets/default.svg'" alt="juyeon210_s2">
+                        <div class="info">
+                            <div class="username">juyeon210_s2 <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">주연🐰</div>
+                        </div>
+                        <a href="https://www.instagram.com/juyeon210_s2/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/yeaji323232/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
-                <div class="user-card">
-                    <img src="assets/lucia_sunnyee.jpg" onerror="this.src='assets/default.svg'" alt="lucia_sunnyee">
-                    <div class="info">
-                        <div class="username">lucia_sunnyee <span class="public-tag">🌏 공개</span></div>
-                        <div class="fullname">Lucia</div>
+
+                    <div class="user-card">
+                        <img src="assets/hurancheska.jpg" onerror="this.src='assets/default.svg'" alt="hurancheska">
+                        <div class="info">
+                            <div class="username">hurancheska <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">-</div>
+                        </div>
+                        <a href="https://www.instagram.com/hurancheska/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
                     </div>
-                    <a href="https://www.instagram.com/lucia_sunnyee/" target="_blank" rel="noopener" class="btn">팔로우</a>
-                </div>
-    
+
+                    <div class="user-card">
+                        <img src="assets/jjungoo.world.jpg" onerror="this.src='assets/default.svg'" alt="jjungoo.world">
+                        <div class="info">
+                            <div class="username">jjungoo.world <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">전성호(BP) / 캄인블루프리다이빙 대표</div>
+                        </div>
+                        <a href="https://www.instagram.com/jjungoo.world/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
+                    </div>
+
+                    <div class="user-card">
+                        <img src="assets/ddddoodii.jpg" onerror="this.src='assets/default.svg'" alt="ddddoodii">
+                        <div class="info">
+                            <div class="username">ddddoodii <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">본격적 탐험 계정</div>
+                        </div>
+                        <a href="https://www.instagram.com/ddddoodii/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
+                    </div>
+
+                    <div class="user-card">
+                        <img src="assets/sehee.86.jpg" onerror="this.src='assets/default.svg'" alt="sehee.86">
+                        <div class="info">
+                            <div class="username">sehee.86 <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">Kkong Kkong</div>
+                        </div>
+                        <a href="https://www.instagram.com/sehee.86/" target="_blank" rel="noopener" class="btn">팔로우</a>
+                    </div>
+
+                    <div class="user-card">
+                        <img src="assets/jessie_kimm.jpg" onerror="this.src='assets/default.svg'" alt="jessie_kimm">
+                        <div class="info">
+                            <div class="username">jessie_kimm <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">Jessie</div>
+                        </div>
+                        <a href="https://www.instagram.com/jessie_kimm/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
+                    </div>
+
+                    <div class="user-card">
+                        <img src="assets/ssun0ee.jpg" onerror="this.src='assets/default.svg'" alt="ssun0ee">
+                        <div class="info">
+                            <div class="username">ssun0ee <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">박선영</div>
+                        </div>
+                        <a href="https://www.instagram.com/ssun0ee/" target="_blank" rel="noopener" class="btn">팔로우</a>
+                    </div>
+
+                    <div class="user-card">
+                        <img src="assets/hssu__15.jpg" onerror="this.src='assets/default.svg'" alt="hssu__15">
+                        <div class="info">
+                            <div class="username">hssu__15 <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">-</div>
+                        </div>
+                        <a href="https://www.instagram.com/hssu__15/" target="_blank" rel="noopener" class="btn">팔로우</a>
+                    </div>
+
+                    <div class="user-card">
+                        <img src="assets/mimi__jo__.jpg" onerror="this.src='assets/default.svg'" alt="mimi__jo__">
+                        <div class="info">
+                            <div class="username">mimi__jo__ <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">-</div>
+                        </div>
+                        <a href="https://www.instagram.com/mimi__jo__/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
+                    </div>
+
+                    <div class="user-card">
+                        <img src="assets/0rindive.jpg" onerror="this.src='assets/default.svg'" alt="0rindive">
+                        <div class="info">
+                            <div class="username">0rindive <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">오린 | Freediving</div>
+                        </div>
+                        <a href="https://www.instagram.com/0rindive/" target="_blank" rel="noopener" class="btn">팔로우</a>
+                    </div>
+
+                    <div class="user-card">
+                        <img src="assets/kkpinktiger.jpg" onerror="this.src='assets/default.svg'" alt="kkpinktiger">
+                        <div class="info">
+                            <div class="username">kkpinktiger <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">DoubleK.JH</div>
+                        </div>
+                        <a href="https://www.instagram.com/kkpinktiger/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
+                    </div>
+
+                    <div class="user-card">
+                        <img src="assets/giraffdoyeun.jpg" onerror="this.src='assets/default.svg'" alt="giraffdoyeun">
+                        <div class="info">
+                            <div class="username">giraffdoyeun <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">이도연</div>
+                        </div>
+                        <a href="https://www.instagram.com/giraffdoyeun/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
+                    </div>
+
+                    <div class="user-card">
+                        <img src="assets/psycho0628.jpg" onerror="this.src='assets/default.svg'" alt="psycho0628">
+                        <div class="info">
+                            <div class="username">psycho0628 <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">심민섭</div>
+                        </div>
+                        <a href="https://www.instagram.com/psycho0628/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
+                    </div>
+
+                    <div class="user-card">
+                        <img src="assets/kyoung0728.jpg" onerror="this.src='assets/default.svg'" alt="kyoung0728">
+                        <div class="info">
+                            <div class="username">kyoung0728 <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">승경</div>
+                        </div>
+                        <a href="https://www.instagram.com/kyoung0728/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
+                    </div>
+
+                    <div class="user-card">
+                        <img src="assets/2_eunchu.jpg" onerror="this.src='assets/default.svg'" alt="2_eunchu">
+                        <div class="info">
+                            <div class="username">2_eunchu <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">은츄 | 어디서든 자유롭게 나답게:)</div>
+                        </div>
+                        <a href="https://www.instagram.com/2_eunchu/" target="_blank" rel="noopener" class="btn">팔로우</a>
+                    </div>
+
+                    <div class="user-card">
+                        <img src="assets/diver_goevia.jpg" onerror="this.src='assets/default.svg'" alt="diver_goevia">
+                        <div class="info">
+                            <div class="username">diver_goevia <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">🧜🏻‍♀️구의동큰손 고에비아 l 다이빙•여행•일상기록</div>
+                        </div>
+                        <a href="https://www.instagram.com/diver_goevia/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
+                    </div>
+
+                    <div class="user-card">
+                        <img src="assets/wooki_871224.jpg" onerror="this.src='assets/default.svg'" alt="wooki_871224">
+                        <div class="info">
+                            <div class="username">wooki_871224 <span class="public-tag">🌏 공개</span></div>
+                            <div class="fullname">오키도키우키포키</div>
+                        </div>
+                        <a href="https://www.instagram.com/wooki_871224/" target="_blank" rel="noopener"
+                            class="btn">팔로우</a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -490,4 +657,5 @@
         </footer>
     </div>
 </body>
+
 </html>

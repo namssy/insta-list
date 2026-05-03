@@ -12,6 +12,7 @@ import time
 import os
 from datetime import datetime
 from pathlib import Path
+from dotenv import load_dotenv
 
 
 def load_users(filepath: str = "users.txt") -> list[str]:
@@ -105,7 +106,41 @@ def fetch_user_data(username: str, L: instaloader.Instaloader, assets_dir: str, 
             print(f"  └─ ✅ 성공 (이미지 저장 실패, 기본 이미지 사용)")
         
     except Exception as e:
-        print(f"  └─ ❌ 실패: {str(e)[:50]}")
+        # Instaloader 실패 시 원시 HTTP 요청(fallback) 시도
+        try:
+            import re
+            import html
+            headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+            res = requests.get(f"https://www.instagram.com/{username}/", headers=headers, timeout=10)
+            res.raise_for_status()
+            html_content = res.text
+            
+            title_match = re.search(r'<meta property="og:title" content="([^"]+)"', html_content)
+            img_match = re.search(r'<meta property="og:image" content="([^"]+)"', html_content)
+            
+            if title_match and img_match:
+                title_text = html.unescape(title_match.group(1))
+                full_name = title_text.split("(@")[0].strip() if "(@" in title_text else username
+                pic_url = html.unescape(img_match.group(1))
+                
+                private_match = re.search(r'"is_private":\s*(true|false)', html_content)
+                is_private = (private_match.group(1) == 'true') if private_match else False
+                
+                user_info["success"] = True
+                user_info["full_name"] = full_name
+                user_info["is_private"] = is_private
+                
+                img_path = os.path.join(assets_dir, f"{username}.jpg")
+                if os.path.exists(img_path):
+                    print(f"  └─ ✅ 성공 (Fallback, 이미지 이미 존재)")
+                elif download_image(pic_url, img_path):
+                    print(f"  └─ ✅ 성공 (Fallback, 이미지 저장됨)")
+                else:
+                    print(f"  └─ ✅ 성공 (Fallback, 이미지 저장 실패)")
+            else:
+                print(f"  └─ ❌ 실패: {str(e)[:50]}")
+        except Exception as fallback_e:
+            print(f"  └─ ❌ 실패: {str(e)[:50]}")
     
     # 캐시 업데이트 및 저장
     cache[username] = user_info
@@ -410,9 +445,24 @@ def main():
     
     print(f"\n📋 사용자: {len(target_list)}명\n")
     
-    # Instaloader 인스턴스 생성 (로그인 없이)
+    # 환경 변수 로드
+    load_dotenv(".env.local")
+    ig_username = os.getenv("IG_USERNAME")
+    ig_password = os.getenv("IG_PASSWORD")
+
+    # Instaloader 인스턴스 생성
     L = instaloader.Instaloader()
     
+    if ig_username and ig_password and ig_username != "your_username_here":
+        try:
+            print(f"🔑 {ig_username} 계정으로 로그인 시도 중...")
+            L.login(ig_username, ig_password)
+            print("✅ 인스타그램 로그인 성공!")
+        except Exception as e:
+            print(f"⚠️ 로그인 실패: {e}")
+    else:
+        print("⚠️ .env.local에 계정 정보가 설정되지 않아 로그인 없이 진행합니다.")
+
     # 캐시 로드
     cache_file = "cache.json"
     cache = {}
