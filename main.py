@@ -183,13 +183,15 @@ def generate_html(developer_data: list[dict], users_data: list[dict], sponsors_d
         cards_html = ""
         for user in data_list:
             if user["success"]:
-                privacy_tag = '<span class="private-tag">🔒 비공개</span>' if user["is_private"] else '<span class="public-tag">🌏 공개</span>'
+                privacy_tag = '<span class="tag private">비공개</span>' if user["is_private"] else ''
                 cards_html += f"""
                 <div class="user-card">
-                    <img src="assets/{user['username']}.jpg" onerror="this.src='assets/default.svg'" alt="{user['username']}">
+                    <div class="avatar-ring">
+                        <img src="assets/{user['username']}.jpg" onerror="this.src='assets/default.svg'" alt="{user['username']}">
+                    </div>
                     <div class="info">
-                        <div class="username">{user['username']} {privacy_tag}</div>
-                        <div class="fullname">{user['full_name'] or '-'}</div>
+                        <div class="username">{user['username']}{privacy_tag}</div>
+                        <div class="fullname">{user['full_name'] or ' '}</div>
                     </div>
                     <a href="https://www.instagram.com/{user['username']}/" target="_blank" rel="noopener" class="btn">팔로우</a>
                 </div>
@@ -197,12 +199,14 @@ def generate_html(developer_data: list[dict], users_data: list[dict], sponsors_d
             else:
                 cards_html += f"""
                 <div class="user-card failed">
-                    <img src="assets/default.svg" alt="{user['username']}">
+                    <div class="avatar-ring muted">
+                        <img src="assets/default.svg" alt="{user['username']}">
+                    </div>
                     <div class="info">
-                        <div class="username">{user['username']} <span class="failed-tag">⚠️ 조회 실패</span></div>
+                        <div class="username">{user['username']}<span class="tag failed">조회 실패</span></div>
                         <div class="fullname">정보를 가져올 수 없습니다</div>
                     </div>
-                    <a href="https://www.instagram.com/{user['username']}/" target="_blank" rel="noopener" class="btn disabled">확인</a>
+                    <a href="https://www.instagram.com/{user['username']}/" target="_blank" rel="noopener" class="btn secondary">확인</a>
                 </div>
     """
         return cards_html
@@ -213,203 +217,252 @@ def generate_html(developer_data: list[dict], users_data: list[dict], sponsors_d
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {{
+            --bg: #fafafa;
+            --surface: #ffffff;
+            --border: #dbdbdb;
+            --text: #262626;
+            --text-muted: #8e8e8e;
+            --primary: #0095f6;
+            --primary-hover: #1877f2;
+            --secondary: #efefef;
+            --danger: #ed4956;
+            --ig-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            --ig-gradient-soft: linear-gradient(135deg, #fde2c4 0%, #fcd0c0 25%, #f8c1d0 50%, #e8c5dc 75%, #d8c2e3 100%);
+        }}
+
         * {{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }}
-        
+
         body {{
-            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard", "Noto Sans KR", Roboto, sans-serif;
+            background: var(--ig-gradient-soft);
+            background-attachment: fixed;
+            color: var(--text);
             min-height: 100vh;
-            padding: 40px 20px;
-        }}
-        
-        .container {{
-            max-width: 1000px;
-            margin: 0 auto;
-        }}
-        
-        header {{
-            text-align: center;
-            margin-bottom: 30px;
-            color: white;
-        }}
-        
-        header h1 {{
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }}
-        
-        header p {{
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }}
-        
-        .lists-wrapper {{
-            display: flex; 
-            gap: 30px;
+            padding: 32px 16px 64px;
+            -webkit-font-smoothing: antialiased;
         }}
 
-        .list-section {{
-            flex: 1;
-            min-width: 0;
+        .container {{
+            max-width: 720px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(18px) saturate(160%);
+            -webkit-backdrop-filter: blur(18px) saturate(160%);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 24px;
+            padding: 8px 16px 24px;
+            box-shadow: 0 20px 60px rgba(80, 40, 100, 0.12);
+        }}
+
+        header {{
+            text-align: center;
+            padding: 28px 24px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(14px) saturate(150%);
+            -webkit-backdrop-filter: blur(14px) saturate(150%);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            box-shadow:
+                0 1px 2px rgba(80, 40, 100, 0.06),
+                0 6px 16px rgba(80, 40, 100, 0.08),
+                0 16px 40px rgba(80, 40, 100, 0.06);
+        }}
+
+        header h1 {{
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+        }}
+
+        header .subtitle {{
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }}
+
+        .stats {{
+            display: inline-flex;
+            gap: 8px;
+            margin-top: 14px;
+        }}
+
+        .stat-item {{
+            background: var(--secondary);
+            color: var(--text);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
         }}
 
         .section-title {{
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin: 30px 0 15px;
-            padding-left: 10px;
-            border-left: 4px solid #fff;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
-        }}
-        
-        .stats {{
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 15px;
-        }}
-        
-        .stat-item {{
-            background: rgba(255,255,255,0.2);
-            padding: 10px 20px;
-            border-radius: 20px;
             font-size: 0.85rem;
-            backdrop-filter: blur(10px);
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin: 8px 4px 16px;
         }}
-        
+
         .user-list {{
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }}
-        
+
         .user-card {{
             display: flex;
             align-items: center;
-            background: white;
-            padding: 16px;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(14px) saturate(150%);
+            -webkit-backdrop-filter: blur(14px) saturate(150%);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            padding: 12px 14px;
             border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow:
+                0 1px 2px rgba(80, 40, 100, 0.06),
+                0 6px 16px rgba(80, 40, 100, 0.08),
+                0 16px 40px rgba(80, 40, 100, 0.06);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }}
-        
+
         .user-card:hover {{
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow:
+                0 2px 4px rgba(80, 40, 100, 0.08),
+                0 10px 24px rgba(80, 40, 100, 0.14),
+                0 24px 56px rgba(80, 40, 100, 0.10);
         }}
-        
+
         .user-card.failed {{
-            background: #f8f8f8;
-            opacity: 0.8;
+            opacity: 0.6;
         }}
-        
-        .user-card img {{
+
+        .avatar-ring {{
             width: 56px;
             height: 56px;
             border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #eee;
+            padding: 2px;
+            background: var(--ig-gradient);
             flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }}
-        
+
+        .avatar-ring.muted {{
+            background: var(--border);
+        }}
+
+        .avatar-ring img {{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--surface);
+            background: var(--surface);
+        }}
+
         .info {{
             flex-grow: 1;
-            margin-left: 14px;
+            margin-left: 12px;
             min-width: 0;
         }}
-        
+
         .username {{
             font-weight: 600;
-            font-size: 1rem;
-            color: #262626;
+            font-size: 0.95rem;
+            color: var(--text);
             display: flex;
             align-items: center;
             gap: 6px;
         }}
-        
-        .private-tag {{
-            font-size: 0.7rem;
-            color: #ff6b6b;
+
+        .tag {{
+            font-size: 0.65rem;
             font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 999px;
+            background: var(--secondary);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
         }}
-        
-        .public-tag {{
-            font-size: 0.7rem;
-            color: #51cf66;
-            font-weight: 600;
+
+        .tag.private {{
+            background: #fff0f0;
+            color: var(--danger);
         }}
-        
-        .failed-tag {{
-            font-size: 0.7rem;
-            color: #aaa;
+
+        .tag.failed {{
+            background: var(--secondary);
+            color: var(--text-muted);
         }}
-        
+
         .fullname {{
             font-size: 0.85rem;
-            color: #8e8e8e;
+            color: var(--text-muted);
             margin-top: 2px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }}
-        
+
         .btn {{
             text-decoration: none;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary);
             color: white;
-            padding: 10px 20px;
-            border-radius: 10px;
+            padding: 7px 14px;
+            border-radius: 8px;
             font-weight: 600;
             font-size: 0.85rem;
             flex-shrink: 0;
-            transition: opacity 0.2s ease, transform 0.2s ease;
+            transition: background-color 0.15s ease;
         }}
-        
+
         .btn:hover {{
-            opacity: 0.9;
-            transform: scale(1.02);
+            background: var(--primary-hover);
         }}
-        
-        .btn.disabled {{
-            background: #ccc;
+
+        .btn.secondary {{
+            background: var(--secondary);
+            color: var(--text);
         }}
-        
+
+        .btn.secondary:hover {{
+            background: #e5e5e5;
+        }}
+
         footer {{
             text-align: center;
-            margin-top: 30px;
-            color: rgba(255,255,255,0.7);
-            font-size: 0.8rem;
-        }}
-        
-        @media (max-width: 768px) {{
-            .lists-wrapper {{
-                flex-direction: column; 
-            }}
+            margin-top: 48px;
+            color: rgba(60, 40, 70, 0.55);
+            font-size: 0.75rem;
         }}
 
         @media (max-width: 480px) {{
-            .user-card {{
-                padding: 12px;
+            body {{
+                padding: 16px 8px 48px;
             }}
-            
-            .user-card img {{
+
+            .user-card {{
+                padding: 8px 6px;
+            }}
+
+            .avatar-ring {{
                 width: 48px;
                 height: 48px;
             }}
-            
+
             .btn {{
-                padding: 8px 14px;
+                padding: 6px 12px;
                 font-size: 0.8rem;
             }}
         }}
@@ -419,20 +472,17 @@ def generate_html(developer_data: list[dict], users_data: list[dict], sponsors_d
     <div class="container">
         <header>
             <h1>{heading}</h1>
-            <p>마지막 업데이트: {now}</p>
+            <p class="subtitle">마지막 업데이트 · {now}</p>
             <div class="stats">
-                <div class="stat-item">전체 {total_count}명</div>                
+                <div class="stat-item">참여자 {total_count}</div>
             </div>
         </header>
-        <div class="lists-wrapper">
-            <div class="list-section">
-                <!-- 일반 참여자 섹션 -->
-                <h2 class="section-title">👥 참여자 목록 ({len(users_data)})</h2>
-                <div class="user-list">
-                    {create_user_cards(users_data)}
-                </div>
+        <main>
+            <h2 class="section-title">참여자 · {len(users_data)}</h2>
+            <div class="user-list">
+                {create_user_cards(users_data)}
             </div>
-        </div>
+        </main>
         <footer>
             <p>Powered by Instagram Follower Tracker</p>
         </footer>
