@@ -262,5 +262,11 @@
     "success": true,
     "full_name": "오키도키우키포키",
     "is_private": false
+  },
+  "shunglebangle": {
+    "username": "shunglebangle",
+    "success": true,
+    "full_name": "슌글방글 | freediving",
+    "is_private": false
   }
 }

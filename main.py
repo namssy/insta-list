@@ -156,10 +156,27 @@ def fetch_user_data(username: str, L: instaloader.Instaloader, assets_dir: str, 
     return user_info, False
 
 
-def generate_html(developer_data: list[dict], users_data: list[dict], sponsors_data: list[dict], total_count: int) -> str:
+def load_config(filepath: str = "config.json") -> dict:
+    """config.json에서 페이지 설정을 읽어옵니다."""
+    import json
+    defaults = {"title": "Insta List", "heading": "Insta List"}
+    if not os.path.exists(filepath):
+        return defaults
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return {**defaults, **data}
+    except Exception as e:
+        print(f"⚠️ {filepath} 로드 실패, 기본값 사용: {e}")
+        return defaults
+
+
+def generate_html(developer_data: list[dict], users_data: list[dict], sponsors_data: list[dict], total_count: int, config: dict) -> str:
     """HTML 컨텐츠를 생성합니다."""
-    
+
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
+    title = config.get("title", "Insta List")
+    heading = config.get("heading", title)
     
     # 사용자 카드 HTML 생성 헬퍼 함수
     def create_user_cards(data_list):
@@ -195,7 +212,7 @@ def generate_html(developer_data: list[dict], users_data: list[dict], sponsors_d
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1월용궁신년회</title>
+    <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
@@ -401,7 +418,7 @@ def generate_html(developer_data: list[dict], users_data: list[dict], sponsors_d
 <body>
     <div class="container">
         <header>
-            <h1>🧜‍♀️1월용궁신년회🧜‍♂️</h1>
+            <h1>{heading}</h1>
             <p>마지막 업데이트: {now}</p>
             <div class="stats">
                 <div class="stat-item">전체 {total_count}명</div>                
@@ -514,7 +531,8 @@ def main():
     
     total_count = len(target_list)  # + len(sponsors_list) + len(developers_list)
     
-    html_content = generate_html(developer_data, users_data, sponsors_data, total_count)
+    config = load_config("config.json")
+    html_content = generate_html(developer_data, users_data, sponsors_data, total_count, config)
     
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html_content)
